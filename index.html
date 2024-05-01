@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Earthquake App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
+
+    <!-- Remixcons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                EarthQuake <i class='bx bx-tsunami'></i>
+            </a>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#current" class="nav__link active-link">
+                            <i class='bx bx-home-alt-2'></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#further" class="nav__link">
+                            <i class='bx bx-search-alt'></i>
+                            <span>Download App</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#value" class="nav__link">
+                            <i class="ri-cloud-fill"></i>
+                            <span>Details</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" id="signoutbutton" class="nav__link">
+                            <i class="bx bx-log-out"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="Register.html" class="nav__link">
+                            <i class="ri-cloud-fill"></i>
+                            <span>Sign Up for Admin</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Theme change button -->
+    <i class='bx bx-moon change-theme' id="theme-button"></i>
+    </nav>
+    </header>
+
+    <main class="main">
+        <section class="home section" id="current">
+            <div class="home__container container grid">
+                <div class="home__data">
+
+                    <h1 class="home__container" id="msg"></h1>
+                    <h1 class="home__title" id="greet"></h1>
+                    <h2 class="home__value"> Welcome, esteemed admins and dedicated rescuers, to our platform
+                        revolutionizing search and rescue operations through seismic monitoring devices integrated with
+                        cutting-edge wearable technology. We extend our heartfelt appreciation for your commitment to
+                        safeguarding lives in times of crisis. Here, within our digital domain, you'll discover a
+                        dynamic hub where innovation meets urgency, where every click and keystroke contributes to the
+                        noble cause of swift and effective rescue missions. With your expertise and our advanced tools,
+                        we stand poised to redefine the boundaries of disaster response, ensuring that no call for help
+                        goes unheard and no life remains beyond reach. Together, let us embark on this journey of
+                        empowerment and efficiency, driven by the shared vision of a safer, more resilient world.
+                        Welcome aboard!</h2>
+
+
+
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+
+    </section>
+    <section class="value section" id="value">
+        <table id="earthquakeTable1">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="earthquakeTableBody1"></tbody>
+        </table>
+
+        <table id="earthquakeTable2">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <br>
+            <br>
+            <br>
+            <br>
+            <tbody id="earthquakeTableBody2"></tbody>
+        </table>
+    </section>
+    <section class="subscribe section">
+        <div class="subscribe__container container">
+            <h1 class="subscribe__title">
+                <i class='bx bxs-cloud-download download'></i> Download our App and get the latest updates
+            </h1>
+            <p class="subscribe__description">
+                The App is in Beta State and will be more user-friendly. Please Click On "Download" Button to
+                Download the App.
+            </p>
+            <button id="downloadButton" class="button subscribe__button">
+                <i class="bx bx-tsunami"></i>
+                <span>Download our App </span>
+            </button>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer section">
+        <div class="footer__info container grid">
+            <span class="footer__copy">
+                &#169; Satnam Pogi
+            </span>
+        </div>
+
+    </footer>
+    </main>
+
+    <!-- SCROLL REVEL -->
+    <script src="assets/js/scrollreveal.js"></script>
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-chevrons-up'></i>
+    </a>
+
+    <!-- Progress Circle -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js'></script>
+
+    <!-- Sweet Alert -->
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+
+    <!-- Moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Swipper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+    <div class="centered-js">
+        <script>
+
+            window.addEventListener('DOMContentLoaded', () => {
+                let MsgHead = document.getElementById('msg');
+                let GreetHead = document.getElementById('greet');
+                let SignoutBtn = document.getElementById('signoutbutton');
+
+                if (!MsgHead || !GreetHead || !SignoutBtn) {
+                    console.error('Error: Unable to find HTML elements');
+                    return;
+                }
+
+                let UserCreds;
+                let UserInfo;
+
+                try {
+                    UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+                    UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+                    console.log("User credentials:", UserCreds);
+                    console.log("User information:", UserInfo);
+                } catch (error) {
+                    console.error('Error parsing sessionStorage items:', error);
+                    return;
+                }
+
+                if (!UserCreds || !UserInfo) {
+                    console.log("User credentials not found. Redirecting to login page...");
+                    window.location.href = 'Login.html';
+                    return;
+                }
+
+                let Signout = () => {
+                    sessionStorage.removeItem("user-creds");
+                    sessionStorage.removeItem("user-info"); // Corrected to lowercase "i"
+                    window.location.href = 'Login.html';
+                };
+                let DownloadApp = () => {
+                    let downloadLink = "RESCUER_APPLICATION.apk";
+                    let a = document.createElement("a");
+                    a.href = downloadLink;
+                    a.download = downloadLink;
+                    a.click();
+                    console.log("App download initiated...");
+                };
+
+                document.getElementById('downloadButton').addEventListener('click', DownloadApp);
+
+
+
+
+                let CheckCred = () => {
+                    MsgHead.innerText = `User ${UserCreds.email} Logged in`;
+
+                    if (UserInfo && UserInfo.firstname && UserInfo.lastname) {
+                        GreetHead.innerText = `Welcome ${UserInfo.firstname} ${UserInfo.lastname}!`;
+                    } else if (UserInfo && UserInfo.firstname) {
+                        GreetHead.innerText = `Welcome ${UserInfo.firstname}!`;
+                    } else if (UserInfo && UserInfo.lastname) {
+                        GreetHead.innerText = `Welcome ${UserInfo.lastname}!`;
+                    } else {
+                        console.error('Error: First name or last name not found in UserInfo');
+                        GreetHead.innerText = 'Welcome to our Website!';
+                    }
+                };
+                fetch('https://final-thesis-2eabc-default-rtdb.firebaseio.com/.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Extract the relevant data
+                        const gpsData = data.GPS;
+                        const longitude = gpsData.f_longitude;
+                        const latitude = gpsData.f_latitude;
+                        const longitude1 = gpsData.f_longitude1;
+                        const latitude1 = gpsData.f_latitude1;
+                        const infoData = data.INFO;
+                        const user = data.users;
+                        const userName1 = user['001'].fullName;
+                        const userAge1 = user['001'].age;
+                        const userName2 = user['002'].fullName;
+                        const userAge2 = user['002'].age;
+
+                        // Debugging: Log infoData to check its structure
+                        console.log(infoData);
+
+                        // Create table rows and cells dynamically
+                        const tableBody1 = document.getElementById('earthquakeTableBody1');
+                        const tableBody2 = document.getElementById('earthquakeTableBody2');
+
+                        const rows = [
+                            { label: 'Name:', value: userName1 },
+                            { label: 'Age:', value: userAge1 },
+                            { label: 'Latitude:', value: latitude },
+                            { label: 'Longitude:', value: longitude },
+                            { label: 'BPM:', value: infoData.BPM1 },
+                            { label: 'Status:', value: infoData.STATUS1 }
+                        ];
+
+                        const rows2 = [
+                            { label: 'Name:', value: userName2 },
+                            { label: 'Age:', value: userAge2 },
+                            { label: 'Latitude:', value: latitude1 },
+                            { label: 'Longitude:', value: longitude1 },
+                            { label: 'BPM:', value: infoData.BPM2 },
+                            { label: 'Status:', value: infoData.STATUS2 }
+                        ];
+
+                        rows.forEach(row => {
+                            const tr = document.createElement('tr');
+                            const tdLabel = document.createElement('td');
+                            const tdValue = document.createElement('td');
+
+                            tdLabel.textContent = row.label;
+                            tdValue.textContent = row.value;
+
+                            tr.appendChild(tdLabel);
+                            tr.appendChild(tdValue);
+
+                            tableBody1.appendChild(tr);
+                        });
+
+                        rows2.forEach(row => {
+                            const tr = document.createElement('tr');
+                            const tdLabel = document.createElement('td');
+                            const tdValue = document.createElement('td');
+
+                            tdLabel.textContent = row.label;
+                            tdValue.textContent = row.value;
+
+                            tr.appendChild(tdLabel);
+                            tr.appendChild(tdValue);
+
+                            tableBody2.appendChild(tr);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+                CheckCred();
+                SignoutBtn.addEventListener('click', Signout);
+            });
+
+        </script>
+    </div>
+
+</body>
+
+
+</html>

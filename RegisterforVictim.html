@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration for the Victim</title>
+    <link rel="stylesheet" href="assets/css/style2.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="MainForm">
+            <h2>Register User</h2>
+            <form>
+                <div class="form-floating">
+                    <input type="text" value="" id="serialNo" required placeholder="Serial No.">
+                </div>
+                <div class="form-floating">
+                    <input type="text" value="" id="fullName" required placeholder="Full Name">
+                </div>
+                <div class="form-floating">
+                    <input type="number" value="" id="age" required placeholder="Age">
+                </div>
+                <button type="submit" id="submit">Submit</button>
+                <button id="downloadButton">Download App</button> <!-- Added download button here -->
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let DownloadApp = () => {
+            let downloadLink = "VICTIM_APPLICATION.apk";
+            let a = document.createElement("a");
+            a.href = downloadLink;
+            a.download = downloadLink;
+            a.click();
+            console.log("App download initiated...");
+        };
+
+        document.getElementById('downloadButton').addEventListener('click', DownloadApp);
+    </script>
+
+    <!-- Firebase JavaScript SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCFth_4pOAIh7FLhzczW4OzaGrAgA9Su4o",
+            authDomain: "final-thesis-2eabc.firebaseapp.com",
+            databaseURL: "https://final-thesis-2eabc-default-rtdb.firebaseio.com",
+            projectId: "final-thesis-2eabc",
+            storageBucket: "final-thesis-2eabc.appspot.com",
+            messagingSenderId: "630741342947",
+            appId: "1:630741342947:web:808c42e0973da4f4d343d6"
+        }
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // Get a reference to the database service
+        const db = getDatabase(app);
+
+        document.querySelector("form").addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get input values
+            const serialNo = document.getElementById("serialNo").value;
+            const fullName = document.getElementById("fullName").value;
+            const age = document.getElementById("age").value;
+
+            // Set data in Firebase
+            set(ref(db, 'users/' + serialNo), {
+                fullName: fullName,
+                age: age
+            }).then(() => {
+                alert("Registration Successful!");
+                // Optionally, you can reset the form after successful submission
+                document.querySelector("form").reset();
+            }).catch((error) => {
+                console.error("Error adding document: ", error);
+                alert("An error occurred. Please try again later.");
+            });
+        });
+    </script>
+</body>
+
+</html>

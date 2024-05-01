@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+#MainForm {
+    max-width: 400px;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-floating {
+    margin-bottom: 20px;
+}
+
+.form-floating input[type="email"],
+.form-floating input[type="password"],
+.form-floating input[type="text"],
+.form-floating input[type="number"] {
+    width: calc(100% - 20px);
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button[type="button"] {
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #337ab7;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 10px 5px; /* Adjusted margin */
+    display: inline-block;
+    font-weight: bold;
+    padding: 0 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+button[type="button"] {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    margin-top: 0;
+    display: inline-block;
+}
+
+button[type="submit"]:focus,
+button[type="button"]:focus {
+    outline: none;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    background-color: #23527c;
+}
+
+button[type="submit"]:active,
+button[type="button"]:active {
+    background-color: #1d4f7c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* added some extra styles to make it more beautiful */
+.container {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+button[type="submit"],
+button[type="button"] {
+    font-weight: bold;
+}
